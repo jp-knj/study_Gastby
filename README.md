@@ -1,2 +1,1 @@
-# Starter_website
-# study_Gastby
+# Study_Gastby
