@@ -1,10 +1,20 @@
 import React, { useEffect } from "react";
+import { Route } from "react-router-dom";
 import { gsap } from "gsap";
 import "./styles/App.scss";
 import Header from "./components/header";
-import Home from "./pages/home"
-import { _colorStringFilter } from "gsap/gsap-core";
 
+// pages
+import Home from "./pages/home";
+import Members from "./pages/members";
+import Activity from "./pages/activity";
+
+// routes
+const routes = [
+  { path: "/", name: "Home", Components: Home },
+  { path: "/members", name: "members", Components: Members },
+  { path: "/activity", name: "activity", Components: Activity }
+]
 
 function App() {
 
@@ -21,7 +31,13 @@ function App() {
   return (
     <>
       <Header />
-      <Home />
+      <div className='App'>
+        {routes.map(({ path, Component }) => (
+          <Route key={path} exact path={path}>
+            <Component />
+          </Route>
+        ))}
+      </div>
     </>
   );
 }

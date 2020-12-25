@@ -5,7 +5,7 @@ const Header = () => {
     <div className="header">
       <div className="container">
         <div className="row v-center space-between">
-          <div className="logo"><a href="/">Company</a></div>
+          <div className="logo"><a href="/">YNC.</a></div>
           <div className="nav"><span></span><span></span></div>
         </div>
       </div>
