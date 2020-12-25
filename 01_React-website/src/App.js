@@ -30,17 +30,12 @@ function debounce(fn, ms) {
 }
 
 function App() {
-
   const [dimensions, setDimensions] = React.useState({
     height: window.innerHeight,
     width: window.innerWidth
   });
-  useEffect(() => {
-    // Grab inner height of window for mobile reasons when dealing with vh
-    let vh = window.innerHeight * 0.01;
-    // Set css variable vh
-    document.documentElement.style.setProperty("--vh", `${vh}px`);
 
+  useEffect(() => {
     // prevents flashing
     gsap.to("body", 0, { css: { visibility: "visible" } });
     const debouncedHandleResize = debounce(function handleResize() {
@@ -51,22 +46,17 @@ function App() {
     }, 1000);
 
     window.addEventListener("resize", debouncedHandleResize);
-
     return () => {
       window.removeEventListener("resize", debouncedHandleResize);
-    }
-
-    // prevents flashing
-    gsap.to("body", 0, { css: { visibility: "visible" } });
+    };
   });
-
   return (
     <>
-      <Header/>
+      <Header dimensions={dimensions} />
       <div className='App'>
         {routes.map(({ path, Component }) => (
           <Route key={path} exact path={path}>
-            <Component />
+            <Component dimensions={dimensions} />
           </Route>
         ))}
       </div>
