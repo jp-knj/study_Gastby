@@ -9,6 +9,7 @@ import Cases from "./components/cases";
 function App() {
   return (
     <div className='App'>
+      <IntroOverlay />
       <Header />
       <Banner />
       <Cases />
