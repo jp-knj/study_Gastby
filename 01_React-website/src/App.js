@@ -1,5 +1,6 @@
 import React from "react";
 import "./styles/App.scss";
+import IntroOverlay from "./components/introOverlay";
 import Header from "./components/header";
 import Banner from "./components/banner";
 import Cases from "./components/cases";
