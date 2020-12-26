@@ -1,8 +1,14 @@
 import styled from 'styled-components'
+import { motion } from "framer-motion"
 
-export const HeaderNav = styled.div`
-  background: ${ props => props.theme.background};
-  color: #fff;
+export const HeaderNav = styled(motion.div)`
+  height: 0px;
+  width: 100%;
+  position: absolute;
+  top: 72px;
+  right: 0;
+  left: 0;
+  z-index: 99;
 `
 export const Logo = styled.div`
   a {
