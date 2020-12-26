@@ -2,10 +2,12 @@ import React, { useState } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
-// styled components
+// Styled components
 import { createGlobalStyle, ThemeProvider } from "styled-components"
 import { normalize } from "styled-normalize"
 
+// Components
+import Header from './header'
 
 const GlobalStyle = createGlobalStyle`
   ${ normalize }
@@ -50,7 +52,8 @@ const Layout = ({ children }) => {
   return (
     <>
       <ThemeProvider theme={lightTheme}>
-      <GlobalStyle />
+        <GlobalStyle />
+        <Header />
         < main > {children}</main >
       </ThemeProvider>
     </>
