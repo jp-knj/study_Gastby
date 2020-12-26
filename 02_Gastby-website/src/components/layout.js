@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
@@ -8,6 +8,9 @@ import { normalize } from "styled-normalize"
 
 // Components
 import Header from './header'
+
+// Context
+import { useGlobalStateContext } from "../context/globalContext"
 
 const GlobalStyle = createGlobalStyle`
   ${ normalize }
@@ -41,17 +44,21 @@ const Layout = ({ children }) => {
 
   const darkTheme = {
     background: '#000',
-    text: '#fff'
+    text: '#fff',
+    red: '#ea291e',
   }
 
   const lightTheme = {
     background: '#fff',
-    text: '#000'
+    text: '#000',
+    red: '#ea291e',
   }
+
+  const { currentTheme } = useGlobalStateContext()
 
   return (
     <>
-      <ThemeProvider theme={lightTheme}>
+      <ThemeProvider theme={ currentTheme === "dark" ? darkTheme : lightTheme }>
         <GlobalStyle />
         <Header />
         < main > {children}</main >
