@@ -78,6 +78,7 @@ const Layout = ({ children }) => {
           setToggleMenu={setToggleMenu}
         />
         <Navigation
+          onCursor={onCursor}
           toggleMenu={toggleMenu}
           setToggleMenu={setToggleMenu}
         />
