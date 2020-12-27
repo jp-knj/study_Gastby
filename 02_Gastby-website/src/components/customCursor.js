@@ -3,6 +3,9 @@ import React, { useState, useEffect} from 'react'
 // Styled component
 import { Cursor } from "../styles/globalStyles"
 
+// Context
+import { useGlobalDispatchContext } from "../context/globalContext"
+
 const CustomCursor = () => {
   const [mousePosition, setMousePosition] = useState({
     x: 400,
