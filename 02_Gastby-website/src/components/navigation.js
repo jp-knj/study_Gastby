@@ -41,7 +41,7 @@ const navRoutes = [
 
 const Navigation = () => {
   const [revealVideo, setRevealVideo] = useState({
-    show: false,
+    show: true,
     video: "featured-video.mp4",
     key: "0",
   })
@@ -96,7 +96,10 @@ const Navigation = () => {
           </NavList>
           <NavFooter></NavFooter>
           <NavVideos>
-            <div className="reveal"></div>
+            <motion.div
+              animate={{ width: revealVideo.show ? 0 : "100%" }}
+              className="reveal"
+            ></motion.div>
             <div className="video">
               <video
                 src={require(`../assets/video/${revealVideo.video}`)}
