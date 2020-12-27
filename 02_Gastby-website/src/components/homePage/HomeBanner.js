@@ -64,6 +64,26 @@ const HomeBanner = ({ onCursor }) => {
     })
   }, [currentTheme])
 
+  const parent = {
+    initial: { y: 800 },
+    animate: {
+      y: 0,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  }
+  const children = {
+    initial: { y: 800 },
+    animate: {
+      y: 0,
+      transition: {
+        duration: 1,
+        ease: [0.6, 0.05, -0.01, 0.9],
+      },
+    },
+  }
+
   return (
     <>
       <Banner >
@@ -83,9 +103,9 @@ const HomeBanner = ({ onCursor }) => {
           onMouseEnter={() => onCursor("hovered")}
           onMouseLeave={onCursor}
         />
-        <BannerTitle>
-          <Headline>DIG</Headline>
-          <Headline>DEEP</Headline>
+        <BannerTitle variants={parent} initial="initial" animate="animate">
+          <Headline variants={children}>DIG</Headline>
+          <Headline variants={children}>DEEP</Headline>
         </BannerTitle>
       </Banner>
     </>
