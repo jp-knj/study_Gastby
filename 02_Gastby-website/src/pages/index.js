@@ -6,6 +6,7 @@ import { useGlobalStateContext, useGlobalDispatchContext } from "../context/glob
 
 // Components
 import HomeBanner from "../components/homePage/HomeBanner";
+import HomeContent from "../components/homePage/HomeContent";
 
 const IndexPage = props => {
 
@@ -19,7 +20,8 @@ const IndexPage = props => {
 
   return (
     <Layout>
-      <HomeBanner onCursor={ onCursor }/>
+      <HomeBanner onCursor={onCursor} />
+      <HomeContent/>
     </Layout>
   )
 }
