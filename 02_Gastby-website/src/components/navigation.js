@@ -1,16 +1,56 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'gatsby'
+import { motion } from 'framer-motion'
 
 import { Container, Flex } from '../styles/globalStyles'
-import { Nav, NavHeader, CloseNav, NavList, NavFooter} from '../styles/navigationStyles'
+import { Nav, NavHeader, CloseNav, NavList, NavFooter, NavVideos } from '../styles/navigationStyles'
+
+const navRoutes = [
+  {
+    id: 0,
+    title: "not humble",
+    path: "/not-humble",
+    video: "featured-video.mp4",
+  },
+  {
+    id: 1,
+    title: "bleeping easy",
+    path: "/bleeping-easy",
+    video: "easy.mp4",
+  },
+  {
+    id: 2,
+    title: "make it zero",
+    path: "/make-it-zero",
+    video: "make-it-zero.mp4",
+  },
+  {
+    id: 3,
+    title: "it takes an island",
+    path: "/it-takes-an-island",
+    video: "it-takes-an-island.mp4",
+  },
+  {
+    id: 4,
+    title: "50 beaches",
+    path: "/50-beaches",
+    video: "50-beaches.mp4",
+  },
+]
+
 
 const Navigation = () => {
+  const [revealVideo, setRevealVideo] = useState({
+    show: false,
+    video: "featured-video.mp4",
+    key: "0",
+  })
   return (
     <>
       <Nav>
         <Container>
           <NavHeader>
-            <Flex spaveBetween noHeight>
+            <Flex spaceBetween noHeight>
               <h2>Project</h2>
               <CloseNav>
                 <button>
@@ -22,28 +62,41 @@ const Navigation = () => {
           </NavHeader>
           <NavList>
             <ul>
-              <li>
-                <Link to='/project/project-name'>
-                  <div className="link">
-                    <span className="arrow">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 101 57"
-                      >
-                        <path
-                          d="M33 34H0V24h81.429L66 7.884 73.548 0l19.877 20.763.027-.029L101 28.618 73.829 57l-7.548-7.884L80.753 34H33z"
-                          fill="#FFF"
-                          fillRule="evenodd"
-                        ></path>
-                      </svg>
-                    </span>
-                    NOT HUNBLE
-                  </div>
-                </Link>
-              </li>
+              {navRoutes.map(route => (
+                <li key={route.id}>
+                  <Link to={`/project/${route.path}`}>
+                    <motion.div initial={{ x: -100 }} className="link">
+                      <span className="arrow">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 101 57"
+                        >
+                          <path
+                            d="M33 34H0V24h81.429L66 7.884 73.548 0l19.877 20.763.027-.029L101 28.618 73.829 57l-7.548-7.884L80.753 34H33z"
+                            fill="#FFF"
+                            fillRule="evenodd"
+                          ></path>
+                        </svg>
+                      </span>
+                    {route.title}
+                  </motion.div>
+                  </Link>
+                </li>
+              ))}
             </ul>
           </NavList>
           <NavFooter></NavFooter>
+          <NavVideos>
+            <div className="reveal"></div>
+            <div className="video">
+              <video
+                src={require(`../assets/video/${revealVideo.video}`)}
+                loop
+                autoPlay
+
+              ></video>
+            </div>
+          </NavVideos>
         </Container>
       </Nav>
     </>
