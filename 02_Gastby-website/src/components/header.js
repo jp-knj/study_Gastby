@@ -29,7 +29,6 @@ const Header = ({ onCursor }) => {
       initial={{ y: -72, opacity: 0 }}
       transition={{duration: 1, ease: [0.6, 0.05, -0.01, 0.9], }}
     >
-
       <Container>
         <Flex spaceBetween >
           <Logo
@@ -37,7 +36,11 @@ const Header = ({ onCursor }) => {
             onMouseLeave={onCursor}
           >
             <Link to="/">FURR</Link>
-            <span onClick={toggleTheme}></span>
+            <span
+              onClick={toggleTheme}
+              onMouseEnter={() => onCursor('pointer')}
+              onMouseLeave={onCursor}
+            ></span>
             <Link to="/">W</Link>
           </Logo>
           <Menu>
