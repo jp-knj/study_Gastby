@@ -57,17 +57,17 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
-        // &:after {
-        //   content: "";
-        //   position: absolute;
-        //   width: 200px;
-        //   height: 200px;
-        //   background: #3f56da;
-        //   left: 140px;
-        //   top: 0;
-        //   border-radius: 100%;
-        //   z-index: -9;
-        // }
+        &:after {
+          content: "";
+          position: absolute;
+          width: 200px;
+          height: 200px;
+          background: #3f56da;
+          left: 140px;
+          top: 0;
+          border-radius: 100%;
+          z-index: -9;
+        }
         ul {
           display: flex;
           position: absolute;
@@ -104,32 +104,41 @@ body {
             position: absolute;
             opacity: 0;
             &:nth-child(1) {
-              opacity: 1;
+              &:after {
+                content: "";
+                position: absolute;
+                height: 12px;
+                width: 310px;
+                background: $text;
+                opacity: 0.3;
+                left: 54px;
+                top: 126px;
+              }
             }
-            // &:nth-child(2) {
-            //   &:after {
-            //     content: "";
-            //     position: absolute;
-            //     height: 12px;
-            //     width: 148px;
-            //     background: $text;
-            //     opacity: 0.3;
-            //     left: 54px;
-            //     top: 126px;
-            //   }
-            // }
-            // &:nth-child(3) {
-            //   &:after {
-            //     content: "";
-            //     position: absolute;
-            //     height: 12px;
-            //     width: 280px;
-            //     background: $text;
-            //     opacity: 0.3;
-            //     left: 144px;
-            //     top: 166px;
-            //   }
-            // }
+            &:nth-child(2) {
+              &:after {
+                content: "";
+                position: absolute;
+                height: 12px;
+                width: 148px;
+                background: $text;
+                opacity: 0.3;
+                left: 54px;
+                top: 126px;
+              }
+            }
+            &:nth-child(3) {
+              &:after {
+                content: "";
+                position: absolute;
+                height: 12px;
+                width: 280px;
+                background: $text;
+                opacity: 0.3;
+                left: 144px;
+                top: 166px;
+              }
+            }
             .content-inner {
               width: 500px;
               .quote {
