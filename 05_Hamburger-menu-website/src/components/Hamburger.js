@@ -3,20 +3,27 @@ import { Link } from "react-router-dom";
 
 const Hamburger = () => {
   return (
-    <header>
+    <div className='hamburger-menu'>
+      <div className='menu-secondary-background-color'></div>
+      <div className='menu-layer'>
+        <div className='menu-city-background'>
+
+        </div>
+      </div>
       <div className='container'>
         <div className='wrapper'>
-          <div className='inner-header'>
-            <div className='logo'>
-              <Link to='/'>HAMBAG.</Link>
-            </div>
-            <div className="menu">
-              <button>Menu</button>
-            </div>
+          <div className='menu-links'>
+            <nav>
+              <ul>
+                <li><Link to='/opportunities'>Opportunities</Link></li>
+                <li><Link to='/Solutions'>Solutions</Link></li>
+                <li><Link to='/contact-us'>Contact Us</Link></li>
+              </ul>
+            </nav>
           </div>
         </div>
       </div>
-    </header>
+    </div>
   )
 };
 
