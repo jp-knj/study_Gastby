@@ -1,7 +1,12 @@
 import React from "react";
+import Hamburger from "./Hamburger";
 
 const Header = () => {
-  return <header></header>;
+  return (
+    <>
+      <Hamburger/>
+    </>
+  )
 };
 
 export default Header;

@@ -1,7 +1,23 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Hamburger = () => {
-  return <div className=''>menu</div>;
+  return (
+    <header>
+      <div className='container'>
+        <div className='wrapper'>
+          <div className='inner-header'>
+            <div className='logo'>
+              <Link to='/'>HAMBAG.</Link>
+            </div>
+            <div className="menu">
+              <button>Menu</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+  )
 };
 
 export default Hamburger;
