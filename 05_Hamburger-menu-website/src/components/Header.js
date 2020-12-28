@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { withRouter, Link } from "react-router-dom";
 import Hamburger from "./Hamburger";
 
-const Header = () => {
+const Header = ({ history }) => {
   // State of our Menu
   const [state, setState] = useState({
     initial: false,
@@ -12,6 +12,14 @@ const Header = () => {
 
   // State of our button
   const [disabled, setDisabled] = useState(false);
+
+  // Use effect for page changes
+  useEffect(() => {
+    // listen for page changes
+    history.listen(() => {
+      setState({ clicked: false, menuName: "Menu" });
+    });
+  });
 
   // Toggle menu
   const handleMenu = () => {
@@ -64,4 +72,4 @@ const Header = () => {
   )
 };
 
-export default Header;
+export default withRouter(Header);
