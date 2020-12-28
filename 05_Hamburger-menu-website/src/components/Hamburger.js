@@ -62,7 +62,7 @@ const Hamburger = ({ state }) => {
     gsap.from(node, {
       y: 60,
       duration: 1,
-      delay: 0.2,
+      delay: .6,
       opacity: 0,
       ease: "power3.inOut",
     });
@@ -71,14 +71,35 @@ const Hamburger = ({ state }) => {
   const staggerText = (node1, node2, node3) => {
     gsap.from([node1, node2, node3], {
       y: 100,
-      duration: 1,
-      delay: 0.4,
+      duration: .6,
+      delay: .4,
       ease: "power3.inOut",
       stagger: {
         amount: 0.3
       }
     });
   };
+
+  // Hover on the link
+  const handleHover = e => {
+    gsap.to(e.target, {
+      duration: 0.3,
+      y: 3,
+      skewX: 4,
+      ease: "power1.inOut"
+    });
+  };
+
+  // Hover off the link
+  const handleHoverExit = e => {
+    gsap.to(e.target, {
+      duration: 0.3,
+      y: -3,
+      skewX: 0,
+      ease: "power1.inOut"
+    });
+  };
+
 
 return (
   <div ref={el => (menu = el)} className='hamburger-menu'>
@@ -90,9 +111,12 @@ return (
           <div className='menu-links'>
             <nav>
               <ul>
-                <li><Link ref={el => (line1 = el)}  to='/opportunities'>Opportunities</Link></li>
-                <li><Link ref={el => (line2 = el)}  to='/solutions'>Solutions</Link></li>
-                <li><Link ref={el => (line3 = el)}  to='/contact-us'>Contact us</Link></li>
+                <li><Link onMouseEnter={e => handleHover(e)}
+                  onMouseOut={e => handleHoverExit(e)} ref={el => (line1 = el)}  to='/opportunities'>Opportunities</Link></li>
+                <li><Link onMouseEnter={e => handleHover(e)}
+                  onMouseOut={e => handleHoverExit(e)}ref={el => (line2 = el)}  to='/solutions'>Solutions</Link></li>
+                <li><Link onMouseEnter={e => handleHover(e)}
+                  onMouseOut={e => handleHoverExit(e)}ref={el => (line3 = el)}  to='/contact-us'>Contact us</Link></li>
               </ul>
             </nav>
             <div ref={el => (info = el)} className='info'>
