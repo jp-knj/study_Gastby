@@ -25,7 +25,7 @@ const homeAnimation = (completeAnimation) => {
     ease: "expo.inOut",
     delay: -.8,
     stagger: {
-      amount: 0.4,
+      amount: 2,
     }
   }).to(".intro-overlay", 0, {
     css: { display: 'none' }

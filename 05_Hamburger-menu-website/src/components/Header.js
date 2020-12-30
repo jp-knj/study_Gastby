@@ -61,7 +61,7 @@ const Header = ({ history }) => {
                 <Link to='/'>HAMBAG.</Link>
               </div>
               <div className="menu">
-                <button disabled={disabled} onClick={handleMenu}>Menu</button>
+                <button disabled={disabled} onClick={handleMenu}>{ state.menuName}</button>
               </div>
             </div>
           </div>

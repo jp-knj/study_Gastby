@@ -64,7 +64,6 @@ const NavBtn = styled.div`
   }
 `;
 
-
 const Navbar = ({ toggle }) => {
   return (
     <Nav>

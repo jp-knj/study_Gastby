@@ -67,7 +67,7 @@ function App() {
               <img src={image} alt={`people ${index}`} />
             </div>
             <h2>
-              Skew <span className="outline">Scrolling</span>
+              冨田 <span className="outline">健治</span>
             </h2>
           </>
         ))}
