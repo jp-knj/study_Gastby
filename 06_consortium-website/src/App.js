@@ -1,9 +1,15 @@
 import "./styles/App.scss";
 
+// Styled Components
+import Header from "./components/Header";
+import Home from "./pages/home";
+
 function App() {
   return (
-    <div className="App">
-    </div>
+    <>
+      <Header />
+      <Home />
+    </>
   );
 }
 

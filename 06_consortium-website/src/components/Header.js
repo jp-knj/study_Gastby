@@ -1,15 +1,18 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+
+// Styled Components
+import { HeaderNav, HeaderWrapper, HeaderLogo, HeaderMenu } from '../styles/headerStyles';
 
 const Header = () => {
   return (
     <>
-      <div className='header'>
-        <div className='header_inner'>
-            <div className='header_logo'><Link to='/' exact>YNC.</Link></div>
-            <div className='header_menu'><button>Menu</button></div>
-        </div>
-      </div>
+      <HeaderNav>
+        <HeaderWrapper>
+          <HeaderLogo>YNC.</HeaderLogo>
+          <HeaderMenu>Menu</HeaderMenu>
+        </HeaderWrapper>
+      </HeaderNav>
     </>
   )
 };
