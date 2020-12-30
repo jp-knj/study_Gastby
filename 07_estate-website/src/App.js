@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import GlobalStyle from './globalStyles';
 import { SliderData } from "./data/SliderData";
 import Dropdown from './components/Dropdown';
+import InfoSection from './components/InfoSection';
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,7 +18,8 @@ function App() {
       <GlobalStyle/>
       <Navbar toggle={toggle}/>
       <Dropdown isOpen={isOpen} toggle={toggle} />
-      <Hero slides={ SliderData }/>
+      <Hero slides={SliderData} />
+      <InfoSection/>
     </>
   );
 }
