@@ -1,10 +1,13 @@
 import GlobalStyle from "./styles/globalStyles";
+import Home from "./pages/home";
+import Header from "./components/header";
 
 function App() {
   return (
     <>
-      <GlobalStyle/>
-      <h1>Hello World</h1>
+      <GlobalStyle />
+      <Header/>
+      <Home/>
     </>
   );
 }
