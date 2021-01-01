@@ -6,7 +6,7 @@ import { IoMdArrowRoundForward } from "react-icons/io";
 import { IoArrowForward, IoArrowBack } from "react-icons/io5";
 
 const HeroSection = styled.section`
-  height: 100vh;
+  height: 50vh;
   max-height: 1100px;
   position: relative;
   overflow: hidden;

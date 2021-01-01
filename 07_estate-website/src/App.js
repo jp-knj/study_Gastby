@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Hero from './components/Hero';
 import Navbar from './components/Navbar';
-import GlobalStyle from './globalStyles';
+import GlobalStyle from './globalStyles';
 import { SliderData } from "./data/SliderData";
 import Dropdown from './components/Dropdown';
 import InfoSection from './components/InfoSection';
