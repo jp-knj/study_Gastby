@@ -1,9 +1,10 @@
 import React, { useRef, useEffect } from "react";
 
-import useWindowSize from "./hooks/useWindowSize";
-import images from "./images/images";
+import useWindowSize from "../hooks/useWindowSize";
+import images from "../images/images";
+import Home from "../pages/home";
 
-const App = () => {
+const SkewScrolling = () => {
   //Hook to grab window size
   const size = useWindowSize();
 
@@ -60,19 +61,33 @@ const App = () => {
   return (
     <div ref={app} className="App">
       <div ref={scrollContainer} className="scroll">
-        {images.map((image, index) => (
-          <>
-            <div key={index} className="img-container">
-              <img src={image} alt={`people ${index}`} />
-            </div>
-            <h2>
-              冨田 <span className="outline">健治</span>
-            </h2>
-          </>
-        ))}
+        <Home />
+        <Home />
+        <Home />
+        <Home />
+        <Home />
+        <Home />
+        <Home />
+        <Home />
+        <Home />
+        <Home />
+        <Home />
+        <Home />
+        <Home />
+        <Home />
+        <Home />
+        <Home />
+        <Home />
+        <Home />
+        <Home />
+        <Home />
+        <Home />
+        <Home />
+        <Home />
+        <Home />
       </div>
     </div>
   );
 }
 
-export default App;
+export default SkewScrolling;
