@@ -1,0 +1,32 @@
+.work {
+    @extend .container;
+    width: 90%;
+
+    &_wrap {
+        // @extend .row;
+    }
+
+    &_meta {
+        justify-content: center;
+        width: calc( 50% - 1px );
+        @include media("<=1080px") {
+            margin: 0 auto;
+            width: 80%;
+        }
+    }
+
+    &_title {
+        margin-bottom: 50px;
+        font-size: 3rem;
+        font-weight: bold;
+        letter-spacing: 1.3pt;
+        color: #333;
+        padding-bottom: 5px;
+        &-sub  {
+            color: #333;
+            font-size: 2rem;
+        }
+    }
+
+
+}
