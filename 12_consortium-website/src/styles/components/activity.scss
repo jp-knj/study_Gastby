@@ -1,0 +1,24 @@
+.activity {
+  &_inner {
+    margin: 0 auto;
+    max-width: 1080px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  &_title {
+    @extend .heading-primary;
+    margin-bottom: 30px;
+    color: $color-primary;
+    span {
+      @extend .text;
+      color: $color-secondary;
+      padding-left: 25px;
+
+    }
+    &-sub {
+      @extend .heading-secondary;
+      margin-bottom: 30px;
+    }
+  }
+}
