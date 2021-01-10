@@ -1,5 +1,6 @@
 .activity {
   &_inner {
+    overflow: hidden;
     margin: 0 auto;
     max-width: 1080px;
     position: relative;
@@ -14,7 +15,6 @@
       @extend .text;
       color: $color-secondary;
       padding-left: 25px;
-
     }
     &-sub {
       @extend .heading-secondary;

@@ -1,0 +1,47 @@
+.about {
+  &_inner {
+    margin: 0 auto;
+    max-width: 1080px;
+    position: relative;
+    display: flex;
+  }
+
+  &_side {
+    position: relative;
+    .background {
+      font-size: 20px;
+      text-transform: uppercase;
+      transform: rotate(90deg);
+      &:before {
+        border-top: 2px solid #dfdfdf;
+        content:"";
+        margin: 0 auto;
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        z-index: -1;
+      }
+    }
+  }
+  &_meta {
+    margin-bottom: 120px;
+  }
+  &_title {
+    @extend .heading-primary;
+    margin-bottom: 30px;
+    color: $color-primary;
+    span {
+      @extend .text;
+      color: $color-secondary;
+      padding-left: 25px;
+
+    }
+    &-sub {
+      @extend .heading-secondary;
+      margin-bottom: 30px;
+    }
+  }
+  &_description {
+    @extend .text;
+    max-width: 600px;
+  }
+}

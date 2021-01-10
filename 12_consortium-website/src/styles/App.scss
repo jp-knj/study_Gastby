@@ -1,9 +1,15 @@
-@import url("https://fonts.googleapis.com/css?family=Josefin+Sans:400,600,700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&display=swap');
+@import "./destyle.css";
 @import "./varibles.scss";
 @import "./breakpoints.scss";
 @import "./components/header.scss";
-@import "./components/banner.scss";
-@import "./components/cases.scss";
+@import "./components/hero.scss";
+@import "./components/about.scss";
+@import "./components/marquu.scss";
+@import "./components/activity.scss";
+@import "./components/cards.scss";
+// @import "./components/button.scss";
 
 body,
 html {
@@ -11,16 +17,13 @@ html {
   background: $white;
   overscroll-behavior: none;
   margin: 0;
-  font-family: "Josefin Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
-    "Helvetica Neue", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 .container {
-  width: 1560px;
-  min-width: 1560px;
+  max-width: 1280px;
   margin: 0 auto;
   height: 100%;
   @include media("<=1560px") {
@@ -35,7 +38,9 @@ html {
     width: 100%;
     min-width: 100%;
   }
-  .row {
+}
+
+.row {
     display: flex;
     height: 100%;
     padding: 0 32px;
@@ -43,13 +48,6 @@ html {
       padding: 0 16px;
     }
   }
-  .v-center {
-    align-items: center;
-  }
-  .space-between {
-    justify-content: space-between;
-  }
-}
 
 .container-fluid {
   width: 100%;
@@ -58,4 +56,39 @@ html {
     display: flex;
     height: 100%;
   }
+}
+
+.font {
+    font-size: 1.2rem;
+    letter-spacing: .3rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.text-main {
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.text {
+  font-size: 20px;
+  font-weight: 400;
+  color: $color-secondary;
+  letter-spacing: .3rem;
+  line-height: 30px;
+}
+
+.heading-primary {
+  font-size: 60px;
+  letter-spacing: .1rem;
+  font-weight: 700;
+}
+
+.heading-secondary {
+  font-size: 26px;
+  color: $color-secondary;
+  letter-spacing: .1rem;
+  font-weight: 600;
+  line-height: 40px;
 }

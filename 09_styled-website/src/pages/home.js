@@ -4,7 +4,11 @@ import Banner from '../components/homePage/banner'
 export const Home = () => {
   return (
     <>
-      <Banner/>
+      <BannerSection/>
+      <CasesSection/>
+      <AboutSection/>
+      <WorkSection/>
+      <BlogSection/>
     </>
   )
 }

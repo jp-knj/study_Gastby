@@ -10,6 +10,7 @@ import Approach from "./pages/approach";
 import Services from "./pages/services";
 import About from "./pages/about";
 import Home from "./pages/home";
+import Cursor from "./components/cursor";
 
 const routes = [
   { path: "/", name: "Home", Component: Home },
@@ -53,6 +54,7 @@ function App() {
   });
   return (
     <>
+      <Cursor />
       <Header dimensions={dimensions} />
       <div className='App'>
         {routes.map(({ path, Component }) => (
